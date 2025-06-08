@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Saraswathi Saraf - Portfolio</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9fafb;
+      scroll-behavior: smooth;
+    }
+
+    header {
+      background: linear-gradient(to right, #fdf2f8, #eff6ff);
+      color: #1e3a8a;
+      text-align: center;
+      padding: 3rem 1rem;
+      border-radius: 0 0 2rem 2rem;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+      animation: pulse 2s infinite;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      color: #6b7280;
+    }
+
+    .section {
+      padding: 3rem 2rem;
+    }
+
+    h2 {
+      text-align: center;
+      color: #1e3a8a;
+      margin-bottom: 2rem;
+    }
+
+    .card-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+    }
+
+    .card {
+      background-color: #ffffff;
+      border-radius: 1rem;
+      padding: 2rem;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s;
+      width: 260px;
+    }
+
+    .card:hover {
+      transform: translateY(-5px) scale(1.03);
+    }
+
+    .stat-card {
+      text-align: center;
+    }
+
+    .stat-card h3 {
+      font-size: 2rem;
+      margin: 0;
+    }
+
+    .stat-card p {
+      margin: 0.5rem 0 0;
+      color: #6b7280;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.04); }
+      100% { transform: scale(1); }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Saraswathi Saraf</h1>
+    <p>Custom Software Engineering Analyst | SQL, Python, SAP | Creative Writer & Storyteller</p>
+  </header>
+
+  <section class="section" id="writer" style="background: linear-gradient(to right, #fdf2f8, #eff6ff); border-radius: 1rem;">
+    <h2 style="color:#be185d; animation: pulse 2s infinite;">✨ Writer & Storyteller ✨</h2>
+    <p style="text-align: center; font-size: 1.2rem; color: #374151;">
+      I'm a published writer and poet with a passion for storytelling that connects hearts.
+    </p>
+
+    <div class="card-grid" style="margin-top: 2.5rem;">
+      <div class="card" style="background:#fff0f6; border-left: 6px solid #ec4899;">
+        <div class="stat-card">
+          <h3 style="color:#be185d;">6</h3>
+          <p>Stories Published</p>
+        </div>
+      </div>
+      <div class="card" style="background:#eff6ff; border-left: 6px solid #3b82f6;">
+        <div class="stat-card">
+          <h3 style="color:#1d4ed8;">55K+</h3>
+          <p>Total Story Views</p>
+        </div>
+      </div>
+      <div class="card" style="background:#fdf2f8; border-left: 6px solid #ec4899;">
+        <div class="stat-card">
+          <h3 style="color:#db2777;">2</h3>
+          <p>National Poetry Medals</p>
+        </div>
+      </div>
+      <div class="card" style="background:#eff6ff; border-left: 6px solid #3b82f6;">
+        <div class="stat-card">
+          <h3 style="color:#1e40af;">Ranks 94 & 90</h3>
+          <p>Top 100 Poets in India</p>
+        </div>
+      </div>
+    </div>
+
+    <p style="text-align:center; margin-top: 2rem; font-weight: 500; font-size: 1.1rem; color:#374151;">
+      Honoured as one of the top 100 poets in India in national poetry contests.
+    </p>
+    <p style="text-align:center; font-style: italic; color: #6b7280;">
+      Read my stories on <a href="https://pratilipi.page.link?apn=com.pratilipi.mobile.android&ibi=com.mobile.ios.Pratilipi&isi=1484810435&efr=1&link=https%3A%2F%2Ftelugu.pratilipi.com%2Fuser%2Fs29025n275%3Futm_campaign%3Dwhatsapp%26utm_source%3Dweb_share&st=Saru" target="_blank" style="color:#ec4899;">Pratilipi</a>
+    </p>
+  </section>
+
+  <section class="section" id="skills">
+    <h2>Skills</h2>
+    <div class="card-grid">
+      <div class="card">
+        <h3>SQL</h3>
+        <p>Advanced level in writing complex queries, optimization, and procedures.</p>
+      </div>
+      <div class="card">
+        <h3>Python</h3>
+        <p>Experience in scripting, automation, and data handling with libraries.</p>
+      </div>
+      <div class="card">
+        <h3>SAP & ACL</h3>
+        <p>Practical knowledge in SAP data handling and ACL tool automation.</p>
+      </div>
+      <div class="card">
+        <h3>Excel</h3>
+        <p>Proficient in formulas, pivot tables, and reporting.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="projects">
+    <h2>Projects</h2>
+    <div class="card-grid">
+      <div class="card">
+        <h3>Arduino + MySQL Project</h3>
+        <p>Built an IoT prototype using Arduino to capture sensor data and store it in MySQL database.</p>
+      </div>
+      <div class="card">
+        <h3>Face Recognition using OpenCV</h3>
+        <p>Designed a Python application for facial recognition with OpenCV and real-time webcam support.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="contact">
+    <h2>Contact</h2>
+    <p style="text-align:center; color:#4b5563;">Email: saraswathi@example.com | LinkedIn: <a href="#">linkedin.com/in/saraswathi</a></p>
+  </section>
+</body>
+
+</html>
+
