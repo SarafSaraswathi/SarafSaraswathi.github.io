@@ -1,178 +1,437 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Saraswathi Saraf - Portfolio</title>
+  <title>Saraswathi Saraf | Artist | Writer | Software Engineer</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
   <style>
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f9fafb;
-      scroll-behavior: smooth;
+      font-family: 'Inter', sans-serif;
     }
-
-    header {
-      background: linear-gradient(to right, #fdf2f8, #eff6ff);
-      color: #1e3a8a;
-      text-align: center;
-      padding: 3rem 1rem;
-      border-radius: 0 0 2rem 2rem;
+    @keyframes gradient {
+      0%, 100% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
     }
-
-    header h1 {
-      font-size: 3rem;
-      margin-bottom: 0.5rem;
-      animation: pulse 2s infinite;
+    .animate-gradient {
+      animation: gradient 10s ease infinite;
     }
-
-    header p {
-      font-size: 1.2rem;
-      color: #6b7280;
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(10px); }
+      100% { opacity: 1; transform: translateY(0); }
     }
-
-    .section {
-      padding: 3rem 2rem;
-    }
-
-    h2 {
-      text-align: center;
-      color: #1e3a8a;
-      margin-bottom: 2rem;
-    }
-
-    .card-grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 2rem;
-    }
-
-    .card {
-      background-color: #ffffff;
-      border-radius: 1rem;
-      padding: 2rem;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-      transition: transform 0.3s;
-      width: 260px;
-    }
-
-    .card:hover {
-      transform: translateY(-5px) scale(1.03);
-    }
-
-    .stat-card {
-      text-align: center;
-    }
-
-    .stat-card h3 {
-      font-size: 2rem;
-      margin: 0;
-    }
-
-    .stat-card p {
-      margin: 0.5rem 0 0;
-      color: #6b7280;
-    }
-
-    @keyframes pulse {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.04); }
-      100% { transform: scale(1); }
+    .fade-in {
+      animation: fadeIn 2s ease-out 1s forwards;
+      opacity: 0;
     }
   </style>
 </head>
+<body class="bg-gradient-to-br from-pink-100 to-indigo-100 text-gray-900">
 
-<body>
-  <header>
-    <h1>Saraswathi Saraf</h1>
-    <p>Custom Software Engineering Analyst | SQL, Python, SAP | Creative Writer & Storyteller</p>
-  </header>
+  <!-- Hero -->
+<section class="w-full py-16 bg-gradient-to-r from-pink-500 via-indigo-500 to-sky-500 animate-gradient bg-[length:600%_600%] text-white relative overflow-hidden">
+  <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center gap-10 bg-white/10 backdrop-blur-md rounded-3xl shadow-2xl py-10 px-8 z-10 relative">
+    
+    <!-- Profile Image -->
+    <img src="https://i.postimg.cc/brr2Hh5S/Whats-App-Image-2025-06-08-at-17-17-41.jpg" alt="Saraswathi Saraf" class="w-56 h-56 rounded-full border-4 border-white shadow-lg object-cover">
+    
+    <!-- Intro Text -->
+    <div class="text-center md:text-left space-y-4">
+      <h1 class="text-4xl md:text-5xl font-extrabold leading-tight mb-2">Saraswathi Saraf</h1>
+      
+      <p id="typewriter" class="text-lg md:text-xl font-medium text-white h-12 mb-2"></p>
 
-  <section class="section" id="writer" style="background: linear-gradient(to right, #fdf2f8, #eff6ff); border-radius: 1rem;">
-    <h2 style="color:#be185d; animation: pulse 2s infinite;">✨ Writer & Storyteller ✨</h2>
-    <p style="text-align: center; font-size: 1.2rem; color: #374151;">
-      I'm a published writer and poet with a passion for storytelling that connects hearts.
-    </p>
+      <!-- Personal Motto or Tagline -->
+      <p class="text-sm md:text-base text-indigo-100 italic max-w-md mx-auto md:mx-0">✨ Passionate about building things that inspire, move, and connect.</p>
 
-    <div class="card-grid" style="margin-top: 2.5rem;">
-      <div class="card" style="background:#fff0f6; border-left: 6px solid #ec4899;">
-        <div class="stat-card">
-          <h3 style="color:#be185d;">6</h3>
-          <p>Stories Published</p>
+      <!-- Highlighted Key Points with Icons -->
+      <ul class="text-white text-sm md:text-base mt-4 space-y-2">
+        <li class="flex items-center gap-2"><i class="ph-bold ph-pen-nib"></i> Published poet & creative writer</li>
+        <li class="flex items-center gap-2"><i class="ph-bold ph-brain"></i> Analytical thinker with a technical edge</li>
+        <li class="flex items-center gap-2"><i class="ph-bold ph-rocket-launch"></i> Building experiences with code, art & ideas</li>
+      </ul>
+
+      <!-- Inspirational Quote -->
+      <blockquote class="italic text-white text-base fade-in max-w-xl mt-4 border-l-4 pl-4 border-white">
+        “The universe is made of stories, not atoms.” – Muriel Rukeyser
+      </blockquote>
+    </div>
+  </div>
+
+  <!-- Particle Canvas -->
+  <canvas id="particles-js" class="absolute inset-0 z-0 pointer-events-none"></canvas>
+
+  <!-- Animation Script -->
+  <script>
+    window.onload = () => {
+      const canvas = document.getElementById('particles-js');
+      const ctx = canvas.getContext('2d');
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+
+      const particles = Array.from({ length: 60 }, () => ({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        r: Math.random() * 2 + 1,
+        dx: Math.random() * 0.5,
+        dy: Math.random() * 0.5,
+      }));
+
+      function animate() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        for (let p of particles) {
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+          ctx.fillStyle = 'rgba(255,255,255,0.6)';
+          ctx.fill();
+          p.x += p.dx;
+          p.y += p.dy;
+          if (p.x > canvas.width) p.x = 0;
+          if (p.y > canvas.height) p.y = 0;
+        }
+        requestAnimationFrame(animate);
+      }
+      animate();
+
+      const text = "Artist | Writer | Software Engineer";
+      let i = 0;
+      function typeWriter() {
+        if (i < text.length) {
+          document.getElementById("typewriter").innerHTML += text.charAt(i);
+          i++;
+          setTimeout(typeWriter, 50);
+        }
+      }
+      typeWriter();
+    };
+  </script>
+</section>
+
+  
+    
+
+
+  <!-- About Me -->
+  <section class="bg-white py-16 px-6">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-3xl font-bold mb-6 text-indigo-800">About Me</h2>
+      <p class="text-lg text-gray-700 leading-relaxed">I'm Saraswathi Saraf — a passionate storyteller and a tech enthusiast. With 50+ published poems and multiple national recognitions, I blend emotional expression with structured creativity. I also work as a developer where I focus on impactful solutions, bringing art and logic together. Let's build and inspire!</p>
+    </div>
+  </section>
+
+  <!-- Highlights & Achievements -->
+<section class="bg-pink-50 px-6 py-16">
+  <h2 class="text-3xl font-bold text-center mb-12 text-indigo-800">🏆 Highlights & Achievements</h2>
+  <div class="grid md:grid-cols-4 gap-8 max-w-6xl mx-auto">
+
+    <div class="bg-gradient-to-br from-pink-100 to-white rounded-2xl shadow-lg p-6 border border-pink-200 hover:scale-105 transition-transform">
+      <div class="text-4xl mb-4 text-pink-600">✍️</div>
+      <h3 class="font-bold text-lg text-indigo-800 mb-2">50+ Published Poems</h3>
+      <p class="text-gray-700">Recognized nationally for poetic storytelling. Emotional depth meets structure.</p>
+    </div>
+
+    <div class="bg-gradient-to-br from-yellow-100 to-white rounded-2xl shadow-lg p-6 border border-yellow-200 hover:scale-105 transition-transform">
+      <div class="text-4xl mb-4 text-yellow-600">🥇</div>
+      <h3 class="font-bold text-lg text-indigo-800 mb-2">2 Gold Medals</h3>
+      <p class="text-gray-700">Awarded in national-level poetry competitions. Ranked 90 & 94 out of 1000+ poets.</p>
+    </div>
+
+    <div class="bg-gradient-to-br from-indigo-100 to-white rounded-2xl shadow-lg p-6 border border-indigo-200 hover:scale-105 transition-transform">
+      <div class="text-4xl mb-4 text-indigo-600">📖</div>
+      <h3 class="font-bold text-lg text-indigo-800 mb-2">7 Stories on Pratilipi</h3>
+      <p class="text-gray-700">Fiction stories exploring emotion, mystery, and introspection.</p>
+    </div>
+
+    <div class="bg-gradient-to-br from-green-100 to-white rounded-2xl shadow-lg p-6 border border-green-200 hover:scale-105 transition-transform">
+      <div class="text-4xl mb-4 text-green-600">👀</div>
+      <h3 class="font-bold text-lg text-indigo-800 mb-2">55K+ Readers on Pratilipi</h3>
+      <p class="text-gray-700">Massive reader engagement across poetry and stories on the Pratilipi platform.</p>
+    </div>
+
+  </div>
+</section>
+
+
+
+  <!-- Featured Stories -->
+<section class="bg-indigo-50 px-6 py-16">
+  <h2 class="text-3xl font-bold text-center mb-12 text-indigo-800">📚 Featured Stories</h2>
+  <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+    <div class="bg-gradient-to-br from-pink-100 to-white p-6 rounded-2xl shadow-lg hover:scale-105 transition-transform border border-pink-200">
+      <h3 class="font-bold text-xl text-indigo-800 mb-2">Chavuki Daggaraga</h3>
+      <p class="text-sm mb-4 text-gray-700">An emotional tale about confrontation and closure.</p>
+      <a href="https://english.pratilipi.com/series/chavuki-daggaraga-by-saru-r2gpzaskafh6" class="text-pink-600 font-medium underline">Read Now</a>
+    </div>
+    <div class="bg-gradient-to-br from-yellow-100 to-white p-6 rounded-2xl shadow-lg hover:scale-105 transition-transform border border-yellow-200">
+      <h3 class="font-bold text-xl text-indigo-800 mb-2">Aa Ratri Jarigindi</h3>
+      <p class="text-sm mb-4 text-gray-700">A suspenseful story set on an unforgettable night.</p>
+      <a href="https://english.pratilipi.com/series/aa-ratri-jarigindi-by-saru-ownivz6y4g1g" class="text-yellow-600 font-medium underline">Read Now</a>
+    </div>
+    <div class="bg-gradient-to-br from-indigo-100 to-white p-6 rounded-2xl shadow-lg hover:scale-105 transition-transform border border-indigo-200">
+      <h3 class="font-bold text-xl text-indigo-800 mb-2">Nenu Chusedi Nijamena</h3>
+      <p class="text-sm mb-4 text-gray-700">Exploring perception, truth, and belief in a deep tale.</p>
+      <a href="https://english.pratilipi.com/series/nenu-chusedi-nijamena-by-saru-5w8dhagtilvk" class="text-indigo-600 font-medium underline">Read Now</a>
+    </div>
+  </div>
+  <div class="mt-12 text-center">
+    <a href="https://telugu.pratilipi.com/user/సరస్వతి-s29025n275?utm_campaign=general&utm_source=web_share" class="inline-block bg-indigo-600 text-white px-6 py-3 rounded-full shadow hover:bg-indigo-700 transition">🌟 Visit My Pratilipi Profile</a>
+  </div>
+</section>
+
+  <!-- Journey -->
+<section class="bg-purple-50 px-6 py-16">
+  <h2 class="text-3xl font-bold text-center mb-12 text-indigo-800">🚀 My Journey</h2>
+  <div class="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+
+    <div class="bg-gradient-to-br from-pink-100 to-white rounded-2xl shadow-lg p-6 border border-pink-200 hover:scale-105 transition-transform">
+      <div class="text-4xl mb-4 text-pink-600">🌱</div>
+      <h3 class="text-xl font-bold text-indigo-800 mb-2">Creative Roots</h3>
+      <p class="text-gray-700">Started as a poet and storyteller, expressing emotion through literature since childhood.</p>
+    </div>
+
+    <div class="bg-gradient-to-br from-yellow-100 to-white rounded-2xl shadow-lg p-6 border border-yellow-200 hover:scale-105 transition-transform">
+      <div class="text-4xl mb-4 text-yellow-600">💡</div>
+      <h3 class="text-xl font-bold text-indigo-800 mb-2">Tech Awakening</h3>
+      <p class="text-gray-700">Discovered passion for programming in college, finding beauty in logic and problem solving.</p>
+    </div>
+
+    <div class="bg-gradient-to-br from-indigo-100 to-white rounded-2xl shadow-lg p-6 border border-indigo-200 hover:scale-105 transition-transform">
+      <div class="text-4xl mb-4 text-indigo-600">🎨</div>
+      <h3 class="text-xl font-bold text-indigo-800 mb-2">Fusion Path</h3>
+      <p class="text-gray-700">Now crafting software with artistic touch — building platforms, writing code and stories alike.</p>
+    </div>
+
+    <div class="bg-gradient-to-br from-green-100 to-white rounded-2xl shadow-lg p-6 border border-green-200 hover:scale-105 transition-transform">
+      <div class="text-4xl mb-4 text-green-600">📈</div>
+      <h3 class="text-xl font-bold text-indigo-800 mb-2">Ongoing Growth</h3>
+      <p class="text-gray-700">Always learning, evolving and embracing both creativity and technology.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- Experience -->
+<section class="bg-yellow-50 py-16 px-6">
+  <h2 class="text-3xl font-bold text-center text-indigo-800 mb-12">💼 Experience</h2>
+
+  <div class="max-w-4xl mx-auto grid grid-cols-1 gap-8">
+    <div class="bg-gradient-to-br from-indigo-50 to-white border-l-4 border-indigo-400 p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-shadow duration-300">
+
+      <div class="flex items-start justify-between mb-4">
+        <div>
+          <h3 class="text-2xl font-semibold text-indigo-900">Custom Software Engineering Analyst</h3>
+          <p class="text-sm text-gray-600">Aug 2021 – Present</p>
+        </div>
+        <div class="text-right text-indigo-700 font-medium">
+          <span class="text-sm bg-indigo-100 px-3 py-1 rounded-full">Accenture, Hyderabad</span>
         </div>
       </div>
-      <div class="card" style="background:#eff6ff; border-left: 6px solid #3b82f6;">
-        <div class="stat-card">
-          <h3 style="color:#1d4ed8;">55K+</h3>
-          <p>Total Story Views</p>
-        </div>
-      </div>
-      <div class="card" style="background:#fdf2f8; border-left: 6px solid #ec4899;">
-        <div class="stat-card">
-          <h3 style="color:#db2777;">2</h3>
-          <p>National Poetry Medals</p>
-        </div>
-      </div>
-      <div class="card" style="background:#eff6ff; border-left: 6px solid #3b82f6;">
-        <div class="stat-card">
-          <h3 style="color:#1e40af;">Ranks 94 & 90</h3>
-          <p>Top 100 Poets in India</p>
-        </div>
+
+      <ul class="text-gray-800 text-[15px] leading-relaxed list-disc list-inside space-y-2 pl-1">
+        <li>Collaborated with cross-functional teams to deliver banking and financial solutions.</li>
+        <li>Designed optimized SQL databases and efficient stored procedures.</li>
+        <li>Built automated workflows and ETL pipelines to boost system performance.</li>
+        <li>Utilized ACL scripts to extract SAP data and integrate into KPI facts.</li>
+        <li>Merged and analyzed Excel datasets to uncover actionable insights.</li>
+        <li>Conducted fraud detection using pattern analysis and financial KPIs.</li>
+        <li>
+          <span class="font-semibold">Technologies:</span>
+          <span class="bg-indigo-100 text-indigo-800 px-2 py-1 rounded-md text-xs ml-1">SQL</span>
+          <span class="bg-indigo-100 text-indigo-800 px-2 py-1 rounded-md text-xs ml-1">Python</span>
+          <span class="bg-indigo-100 text-indigo-800 px-2 py-1 rounded-md text-xs ml-1">SAP</span>
+          <span class="bg-indigo-100 text-indigo-800 px-2 py-1 rounded-md text-xs ml-1">ACL</span>
+          <span class="bg-indigo-100 text-indigo-800 px-2 py-1 rounded-md text-xs ml-1">KPI Fact</span>
+          <span class="bg-indigo-100 text-indigo-800 px-2 py-1 rounded-md text-xs ml-1">Excel</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+
+
+  <!-- Education -->
+<section class="bg-indigo-50 px-6 py-16">
+  <h2 class="text-3xl font-bold text-center mb-12 text-indigo-800">🎓 Education</h2>
+  <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-6">
+
+    <!-- B.Tech -->
+    <div class="bg-gradient-to-br from-indigo-100 to-white p-6 rounded-2xl shadow-lg border border-indigo-200 hover:scale-105 transition-transform">
+      <h3 class="text-lg font-bold text-indigo-800 mb-1">Malla Reddy Engineering College for Women</h3>
+      <p class="text-sm text-gray-700 mb-1">B.Tech – Electronics & Communication</p>
+      <p class="text-sm text-gray-700 mb-1">CGPA: <span class="font-semibold text-indigo-700">8.3</span> | 2017 – 2021</p>
+      <p class="text-sm text-gray-700">Hyderabad, India</p>
+    </div>
+
+    <!-- Intermediate -->
+    <div class="bg-gradient-to-br from-pink-100 to-white p-6 rounded-2xl shadow-lg border border-pink-200 hover:scale-105 transition-transform">
+      <h3 class="text-lg font-bold text-pink-800 mb-1">Spoorthy Junior College</h3>
+      <p class="text-sm text-gray-700 mb-1">MPC | <span class="font-semibold text-pink-700">91.9%</span></p>
+      <p class="text-sm text-gray-700 mb-1">2017</p>
+      <p class="text-sm text-gray-700">Hyderabad, India</p>
+    </div>
+
+    <!-- SSC -->
+    <div class="bg-gradient-to-br from-green-100 to-white p-6 rounded-2xl shadow-lg border border-green-200 hover:scale-105 transition-transform">
+      <h3 class="text-lg font-bold text-green-800 mb-1">TS Residential School</h3>
+      <p class="text-sm text-gray-700 mb-1">SSC | GPA: <span class="font-semibold text-green-700">9.2</span></p>
+      <p class="text-sm text-gray-700 mb-1">2015</p>
+      <p class="text-sm text-gray-700">Siddipet, India</p>
+    </div>
+
+  </div>
+</section>
+
+
+  <!-- Projects -->
+<section class="bg-sky-50 px-6 py-16">
+  <h2 class="text-3xl font-bold text-center mb-12 text-indigo-800">💻 Projects</h2>
+  <div class="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+
+    <!-- Project 1: Automatic Platform Bridge -->
+    <div class="bg-gradient-to-br from-yellow-100 to-white p-6 rounded-2xl shadow-lg border border-yellow-200 hover:scale-[1.02] transition-transform group">
+      <h3 class="text-xl font-semibold text-yellow-800 mb-2">Automatic Platform Bridge</h3>
+      <p class="text-gray-700 mb-3">Automated mobile platform bridge at railway stations using Arduino and sensors for safe crossing.</p>
+      <div class="flex flex-wrap gap-2">
+        <span class="bg-yellow-200 text-yellow-800 px-2 py-1 rounded text-xs">Arduino</span>
+        <span class="bg-yellow-200 text-yellow-800 px-2 py-1 rounded text-xs">IR Sensors</span>
+        <span class="bg-yellow-200 text-yellow-800 px-2 py-1 rounded text-xs">Embedded C</span>
       </div>
     </div>
 
-    <p style="text-align:center; margin-top: 2rem; font-weight: 500; font-size: 1.1rem; color:#374151;">
-      Honoured as one of the top 100 poets in India in national poetry contests.
-    </p>
-    <p style="text-align:center; font-style: italic; color: #6b7280;">
-      Read my stories on <a href="https://pratilipi.page.link?apn=com.pratilipi.mobile.android&ibi=com.mobile.ios.Pratilipi&isi=1484810435&efr=1&link=https%3A%2F%2Ftelugu.pratilipi.com%2Fuser%2Fs29025n275%3Futm_campaign%3Dwhatsapp%26utm_source%3Dweb_share&st=Saru" target="_blank" style="color:#ec4899;">Pratilipi</a>
-    </p>
-  </section>
+    <!-- Project 2: Bank DB Management -->
+    <div class="bg-gradient-to-br from-indigo-100 to-white p-6 rounded-2xl shadow-lg border border-indigo-200 hover:scale-[1.02] transition-transform group">
+      <h3 class="text-xl font-semibold text-indigo-800 mb-2">Bank DB Management</h3>
+      <p class="text-gray-700 mb-3">MySQL-based system managing customer info and bank data with optimized relational structure.</p>
+      <div class="flex flex-wrap gap-2 mb-3">
+        <span class="bg-indigo-200 text-indigo-800 px-2 py-1 rounded text-xs">MySQL</span>
+        <span class="bg-indigo-200 text-indigo-800 px-2 py-1 rounded text-xs">Database</span>
+        <span class="bg-indigo-200 text-indigo-800 px-2 py-1 rounded text-xs">ER Diagrams</span>
+      </div>
+      <a href="https://github.com/SarafSaraswathi/Bank-Management" target="_blank" class="inline-flex items-center gap-1 bg-indigo-300 hover:bg-indigo-400 text-indigo-900 px-4 py-1 rounded text-sm font-medium transition">
+        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0a12 12 0 0112 12c0 5.08-3.165 9.41-7.621 11.106.016-.313.023-.63.023-.95V18.58c0-.941-.338-1.553-.703-1.865 2.291-.26 4.699-1.147 4.699-5.16 0-1.142-.406-2.075-1.074-2.808.107-.26.465-1.308-.103-2.728 0 0-.867-.278-2.842 1.065A9.872 9.872 0 0012 6.836a9.88 9.88 0 00-2.285.266C7.741 5.546 6.873 5.824 6.873 5.824c-.568 1.42-.21 2.468-.103 2.728A4.038 4.038 0 005.696 11.56c0 4.007 2.404 4.9 4.693 5.164-.292.253-.553.699-.646 1.353-.58.259-2.056.711-2.964-.843 0 0-.537-.981-1.556-1.054 0 0-.99-.012-.07.622 0 0 .667.314 1.126 1.496 0 0 .597 1.856 3.43 1.282v2.267c0 .319.008.637.023.949C3.163 21.41 0 17.08 0 12A12 12 0 0112 0z"/></svg>
+        View GitHub
+      </a>
+    </div>
 
-  <section class="section" id="skills">
-    <h2>Skills</h2>
-    <div class="card-grid">
-      <div class="card">
-        <h3>SQL</h3>
-        <p>Advanced level in writing complex queries, optimization, and procedures.</p>
+    <!-- Project 3: OpenCV Face Detection -->
+    <div class="bg-gradient-to-br from-pink-100 to-white p-6 rounded-2xl shadow-lg border border-pink-200 hover:scale-[1.02] transition-transform group">
+      <h3 class="text-xl font-semibold text-pink-800 mb-2">OpenCV Face Detection</h3>
+      <p class="text-gray-700 mb-3">Real-time webcam face detection using Python and Haar Cascade with live rectangle highlights.</p>
+      <div class="flex flex-wrap gap-2 mb-3">
+        <span class="bg-pink-200 text-pink-800 px-2 py-1 rounded text-xs">Python</span>
+        <span class="bg-pink-200 text-pink-800 px-2 py-1 rounded text-xs">OpenCV</span>
+        <span class="bg-pink-200 text-pink-800 px-2 py-1 rounded text-xs">Computer Vision</span>
       </div>
-      <div class="card">
-        <h3>Python</h3>
-        <p>Experience in scripting, automation, and data handling with libraries.</p>
-      </div>
-      <div class="card">
-        <h3>SAP & ACL</h3>
-        <p>Practical knowledge in SAP data handling and ACL tool automation.</p>
-      </div>
-      <div class="card">
-        <h3>Excel</h3>
-        <p>Proficient in formulas, pivot tables, and reporting.</p>
+      <a href="https://github.com/SarafSaraswathi/Face-Detection-using-opencv-Python-" target="_blank" class="inline-flex items-center gap-1 bg-pink-300 hover:bg-pink-400 text-pink-900 px-4 py-1 rounded text-sm font-medium transition">
+        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M12.293 3.293a1 1 0 011.414 0L17 6.586V16a2 2 0 01-2 2H5a2 2 0 01-2-2V4a1 1 0 112 0v12h10V6.414l-2.293-2.121a1 1 0 010-1.414z"/></svg>
+        View GitHub
+      </a>
+    </div>
+
+  </div>
+</section>
+
+
+ <!-- Skills Toolkit -->
+<section class="bg-purple-50 px-6 py-16">
+  <h2 class="text-3xl font-bold text-center mb-12 text-indigo-800">🧰 Skills Toolkit</h2>
+
+  <div class="max-w-5xl mx-auto space-y-12">
+
+    <!-- Technical Skills -->
+    <div>
+      <h3 class="text-xl font-semibold text-center text-indigo-700 mb-4">Technical Skills</h3>
+      <div class="flex flex-wrap justify-center gap-4">
+        <span class="bg-white text-indigo-700 px-4 py-2 rounded-full shadow text-sm font-medium">C</span>
+        <span class="bg-white text-indigo-700 px-4 py-2 rounded-full shadow text-sm font-medium">SQL</span>
+        <span class="bg-white text-indigo-700 px-4 py-2 rounded-full shadow text-sm font-medium">Python</span>
+        <span class="bg-white text-indigo-700 px-4 py-2 rounded-full shadow text-sm font-medium">Flask</span>
+        <span class="bg-white text-indigo-700 px-4 py-2 rounded-full shadow text-sm font-medium">Django</span>
+        <span class="bg-white text-indigo-700 px-4 py-2 rounded-full shadow text-sm font-medium">SAP (ACL Scripts)</span>
+        <span class="bg-white text-indigo-700 px-4 py-2 rounded-full shadow text-sm font-medium">Git</span>
+        <span class="bg-white text-indigo-700 px-4 py-2 rounded-full shadow text-sm font-medium">GitHub</span>
+        <span class="bg-white text-indigo-700 px-4 py-2 rounded-full shadow text-sm font-medium">APIs</span>
       </div>
     </div>
-  </section>
 
-  <section class="section" id="projects">
-    <h2>Projects</h2>
-    <div class="card-grid">
-      <div class="card">
-        <h3>Arduino + MySQL Project</h3>
-        <p>Built an IoT prototype using Arduino to capture sensor data and store it in MySQL database.</p>
-      </div>
-      <div class="card">
-        <h3>Face Recognition using OpenCV</h3>
-        <p>Designed a Python application for facial recognition with OpenCV and real-time webcam support.</p>
+    <!-- Soft Skills -->
+    <div>
+      <h3 class="text-xl font-semibold text-center text-indigo-700 mb-4">Soft Skills</h3>
+      <div class="flex flex-wrap justify-center gap-4">
+        <span class="bg-white text-indigo-700 px-4 py-2 rounded-full shadow text-sm font-medium">Cross-functional Collaboration</span>
+        <span class="bg-white text-indigo-700 px-4 py-2 rounded-full shadow text-sm font-medium">Problem-solving</span>
+        <span class="bg-white text-indigo-700 px-4 py-2 rounded-full shadow text-sm font-medium">Analytical Thinking</span>
+        <span class="bg-white text-indigo-700 px-4 py-2 rounded-full shadow text-sm font-medium">Requirement Gathering</span>
       </div>
     </div>
-  </section>
 
-  <section class="section" id="contact">
-    <h2>Contact</h2>
-    <p style="text-align:center; color:#4b5563;">Email: saraswathi@example.com | LinkedIn: <a href="#">linkedin.com/in/saraswathi</a></p>
-  </section>
+  </div>
+</section>
+
+<!-- Inspirational Quotes -->
+<section class="bg-violet-50 px-6 py-16">
+  <h2 class="text-3xl font-bold text-center text-indigo-800 mb-12">✨ Quotes That Inspire Me</h2>
+
+  <div class="max-w-4xl mx-auto space-y-8">
+
+    <div class="bg-white border-l-4 border-indigo-400 p-6 rounded-xl shadow-md">
+      <p class="text-lg italic text-gray-700">"To reach the 100th step, you must begin with the first."</p>
+      <p class="text-right text-sm text-indigo-600 mt-2">— A reminder to embrace beginnings with courage</p>
+    </div>
+
+    <div class="bg-white border-l-4 border-indigo-400 p-6 rounded-xl shadow-md">
+      <p class="text-lg italic text-gray-700">"Hope is the quiet force that keeps us moving forward."</p>
+      <p class="text-right text-sm text-indigo-600 mt-2">— A whisper of resilience in every step</p>
+    </div>
+
+  </div>
+</section>
+  
+ 
+     <!-- Get In Touch -->
+<section class="bg-indigo-200 px-6 py-16">
+  <h2 class="text-3xl font-bold text-center mb-6 text-white">📬 Get in Touch</h2>
+  <p class="text-center max-w-xl mx-auto mb-8 text-indigo-900 text-lg">
+    Whether you're interested in collaborating, sharing ideas, or just saying hi — I’d love to hear from you!
+  </p>
+
+  <div class="flex flex-col items-center gap-4 text-center">
+    <!-- Email -->
+    <div class="text-lg text-indigo-900 font-medium">
+      📧 <a href="mailto:saraswathisaraf@gmail.com" class="underline hover:text-indigo-800 transition">saraswathisaraf@gmail.com</a>
+    </div>
+
+    <!-- Phone -->
+    <div class="text-lg text-indigo-900 font-medium">
+      📞 <a href="tel:+916304206519" class="hover:underline hover:text-indigo-800 transition">+91 63042 06519</a>
+    </div>
+
+    <!-- Social Links -->
+    <div class="flex gap-4 mt-4 flex-wrap justify-center">
+      <!-- LinkedIn -->
+      <a href="https://www.linkedin.com/in/saraswathi-saraf-763257260/" target="_blank"
+         class="bg-white text-indigo-600 px-4 py-2 rounded-full shadow hover:bg-indigo-50 transition font-medium flex items-center gap-2">
+        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM0 24h5V7H0v17zm7.5-17h4.78v2.2h.07c.66-1.24 2.27-2.54 4.67-2.54 5 0 5.92 3.29 5.92 7.57V24h-5v-8.27c0-1.97-.04-4.49-2.73-4.49-2.73 0-3.15 2.14-3.15 4.35V24h-5V7z"/>
+        </svg>
+        LinkedIn
+      </a>
+
+      <!-- Instagram -->
+      <a href="https://www.instagram.com/saru_9995/" target="_blank"
+         class="bg-white text-pink-600 px-4 py-2 rounded-full shadow hover:bg-pink-50 transition font-medium flex items-center gap-2">
+        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.17.07 1.96.24 2.42.4a4.6 4.6 0 011.66 1.08 4.6 4.6 0 011.08 1.66c.16.46.33 1.25.4 2.42.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.07 1.17-.24 1.96-.4 2.42a4.6 4.6 0 01-1.08 1.66 4.6 4.6 0 01-1.66 1.08c-.46.16-1.25.33-2.42.4-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.17-.07-1.96-.24-2.42-.4a4.6 4.6 0 01-1.66-1.08 4.6 4.6 0 01-1.08-1.66c-.16-.46-.33-1.25-.4-2.42C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.07-1.17.24-1.96.4-2.42A4.6 4.6 0 013.78 3.02a4.6 4.6 0 011.66-1.08c.46-.16 1.25-.33 2.42-.4C8.4 2.2 8.8 2.2 12 2.2zm0 2.4c-3.1 0-3.5 0-4.7.1-1.13.07-1.75.24-2.16.4a2.2 2.2 0 00-.92.62 2.2 2.2 0 00-.62.92c-.16.41-.33 1.03-.4 2.16-.1 1.2-.1 1.6-.1 4.7s0 3.5.1 4.7c.07 1.13.24 1.75.4 2.16.13.36.36.68.62.92.25.25.56.49.92.62.41.16 1.03.33 2.16.4 1.2.1 1.6.1 4.7.1s3.5 0 4.7-.1c1.13-.07 1.75-.24 2.16-.4.36-.13.68-.36.92-.62.25-.25.49-.56.62-.92.16-.41.33-1.03.4-2.16.1-1.2.1-1.6.1-4.7s0-3.5-.1-4.7c-.07-1.13-.24-1.75-.4-2.16a2.2 2.2 0 00-.62-.92 2.2 2.2 0 00-.92-.62c-.41-.16-1.03-.33-2.16-.4-1.2-.1-1.6-.1-4.7-.1zm0 3.9a5.9 5.9 0 110 11.8 5.9 5.9 0 010-11.8zm0 2.4a3.5 3.5 0 100 7 3.5 3.5 0 000-7zm5.9-2.5a1.4 1.4 0 110 2.8 1.4 1.4 0 010-2.8z"/>
+        </svg>
+        Instagram
+      </a>
+    </div>
+  </div>
+</section>
+
+
 </body>
-
 </html>
-
